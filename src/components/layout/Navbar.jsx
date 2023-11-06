@@ -63,6 +63,14 @@ const Navbar = () => {
             Login
           </NavLink>
           <NavLink
+            to="/register"
+            className={({ isActive }) =>
+              isActive ? `btn btn-primary btn-sm` : `btn btn-ghost btn-sm`
+            }
+          >
+            Register
+          </NavLink>
+          <NavLink
             to="/about"
             className={({ isActive }) =>
               isActive ? `btn btn-primary btn-sm` : `btn btn-ghost btn-sm`
