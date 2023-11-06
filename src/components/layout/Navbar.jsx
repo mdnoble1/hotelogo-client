@@ -1,6 +1,22 @@
 import { NavLink } from "react-router-dom";
+import UseAuth from "../../hooks/UseAuth";
 
 const Navbar = () => {
+
+
+  const { user, logOut } = UseAuth();
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        console.log("user logged out");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
+
   return (
     <div className="container mx-auto">
       <div className="flex-none lg:hidden">
@@ -78,8 +94,39 @@ const Navbar = () => {
           >
             About
           </NavLink>
-        </ul>
+          </ul>
       </div>
+      <div className={`hidden lg:block`}>
+          {user && (
+            <>
+              <div className="flex items-center justify-between gap-4">
+                <div>
+                  <label
+                    tabIndex={0}
+                    className="btn btn-ghost btn-circle avatar"
+                  >
+                    <div className="w-10 rounded-full">
+                      <img src={user.photoURL} />
+                    </div>
+                  </label>
+                </div>
+                <div>
+                  <span className="block font-semibold text-sm text-center">
+                    {user.displayName}
+                  </span>
+                </div>
+                <div>
+                  <button
+                    onClick={handleLogOut}
+                    className="btn btn-md btn-outline text-[#ea001e]"
+                  >
+                    Logout
+                  </button>
+                </div>
+              </div>
+            </>
+          )}
+        </div>
     </div>
   );
 };
