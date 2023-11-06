@@ -31,6 +31,14 @@ const Navbar = () => {
         <ul className="menu menu-horizontal">
           {/* Navbar menu content here */}
           <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive ? `btn btn-primary btn-sm` : `btn btn-ghost btn-sm`
+            }
+          >
+            Home
+          </NavLink>
+          <NavLink
             to="/rooms"
             className={({ isActive }) =>
               isActive ? `btn btn-primary btn-sm` : `btn btn-ghost btn-sm`

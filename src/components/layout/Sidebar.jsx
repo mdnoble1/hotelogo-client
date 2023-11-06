@@ -11,6 +11,14 @@ const Sidebar = () => {
       <ul className="menu p-4 w-80 min-h-full bg-base-200">
         {/* Sidebar content here */}
         <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive ? `btn btn-primary btn-sm` : `btn btn-ghost btn-sm`
+          }
+        >
+          Home
+        </NavLink>
+        <NavLink
           to="/rooms"
           className={({ isActive }) =>
             isActive ? `btn btn-primary btn-sm` : `btn btn-ghost btn-sm`
