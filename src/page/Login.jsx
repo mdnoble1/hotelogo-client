@@ -1,19 +1,22 @@
 /* eslint-disable no-unused-vars */
 import { NavLink, useNavigate } from "react-router-dom";
-import {  useState } from "react";
+import { useState } from "react";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
-import Swal from 'sweetalert2'
+import Swal from "sweetalert2";
 import UseAuth from "../hooks/UseAuth";
+import UseAxios from "../hooks/UseAxios";
 
 const Login = () => {
+  // const [ email , setEmail] = useState('');
+  // const [ password , setPassword] = useState('');
   const { signInUser, signInWithGoogle } = UseAuth();
-
   const navigate = useNavigate();
+  const axios = UseAxios();
 
   // password show and hide
   const [showPassword, setShowPassword] = useState(false);
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
 
     const email = e.target.email.value;
@@ -23,36 +26,42 @@ const Login = () => {
 
     // log in user from firebase
 
-    signInUser(email, password)
-      .then((result) => {
-        console.log(result.user);
-        e.target.reset();
-        navigate("/");
-      })
-      .catch((error) => {
-        Swal.fire({
-          title: 'Error!',
-          text: "Email and Password Dosen't Match",
-          icon: 'error',
-          confirmButtonText: "Let's Try Agin"
-        })
+    try {
+     const  user = await signInUser(email, password);
+
+     console.log(user.user.email)
+
+      const res = await axios.post('/auth/access-token' , {
+        email : user.user.email
       });
+
+      console.log(res)
+
+
+      e.target.reset();
+      navigate("/");
+    } catch (error) {
+      Swal.fire({
+        title: "Error!",
+        text: "Email and Password Doesn't Match",
+        icon: "error",
+        confirmButtonText: "Let's Try Agin",
+      });
+    }
   };
 
-  const handleLoginWithGoogle = () => {
-    signInWithGoogle()
-      .then((result) => {
-        console.log(result.user);
-        navigate("/");
-      })
-      .catch((error) => {
-        Swal.fire({
-          title: 'Error!',
-          text: "Email and Password Dosen't Match",
-          icon: 'error',
-          confirmButtonText: "Let's Try Agin"
-        })
+  const handleLoginWithGoogle = async () => {
+    try {
+      await signInWithGoogle();
+      navigate("/");
+    } catch (error) {
+      Swal.fire({
+        title: "Error!",
+        text: "Email and Password Doesn't Match",
+        icon: "error",
+        confirmButtonText: "Let's Try Agin",
       });
+    }
   };
 
   return (
@@ -101,7 +110,7 @@ const Login = () => {
               </div>
             </div>
             <div className="form-control mt-6">
-              <button className="btn rounded-lg font-semibold text-xl normal-case text-white bg-[#ea001e] hover:bg-red-400 hover:text-black">
+              <button type="submit" className="btn rounded-lg font-semibold text-xl normal-case text-white bg-[#ea001e] hover:bg-red-400 hover:text-black">
                 Login
               </button>
             </div>
