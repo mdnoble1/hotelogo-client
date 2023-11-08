@@ -99,7 +99,7 @@ const Navbar = () => {
                   <div className="text-center">
                     <button
                       onClick={handleLogOut}
-                      className="btn btn-sm btn-outline text-[#ea001e]"
+                      className="btn btn-sm btn-outline text-[#D31027]"
                     >
                       Logout
                     </button>
@@ -111,8 +111,12 @@ const Navbar = () => {
                 <div className="my-8 text-center">
                   <p className="font-semibold text-black text-lg">
                     Please{" "}
-                    <NavLink to="/login" className="text-[#ea001e]">
+                    <NavLink to="/login" className="text-[#D31027]">
+                    <button
+                      className="btn btn-sm btn-outline text-[#D31027] ml-2"
+                    >
                       Login
+                    </button>
                     </NavLink>
                   </p>
                 </div>
