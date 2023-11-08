@@ -67,12 +67,14 @@ const Login = () => {
   return (
     <div className="my-12 lg:mt-32">
       <div className="flex justify-center items-baseline">
-        <img className="w-48 mb-10 lg:mb-0" src={logo} alt="" />
+        <NavLink to={"/"}>
+          <img className="w-48 mb-10 lg:mb-0" src={logo} alt="" />
+        </NavLink>
       </div>
       <div className="lg:pb-12 drop-shadow-2xl">
         <div className="w-11/12 lg:w-1/3 mx-auto border-2 border-[#D31027] rounded-md lg:mt-12">
           <div className="py-12 bg-white rounded-md">
-            <h2 className="font-bold text-3xl text-black text-center">Login</h2>
+            <h2 className="font-bold text-4xl text-black text-center">Login</h2>
             <form onSubmit={handleLogin} className="card-body lg:w-3/4 mx-auto">
               <div className="form-control">
                 <label className="label">

@@ -40,7 +40,9 @@ const Navbar = () => {
         </label>
       </div>
       <div className="flex-1">
-        <img className="w-28 lg:w-48" src={logo} alt="logo" />
+        <NavLink to={"/"}>
+          <img className="w-28 lg:w-48" src={logo} alt="logo" />
+        </NavLink>
       </div>
       <div className="flex-none hidden lg:block">
         <ul className="menu menu-horizontal">
@@ -112,11 +114,9 @@ const Navbar = () => {
                   <p className="font-semibold text-black text-lg">
                     Please{" "}
                     <NavLink to="/login" className="text-[#D31027]">
-                    <button
-                      className="btn btn-sm btn-outline text-[#D31027] ml-2"
-                    >
-                      Login
-                    </button>
+                      <button className="btn btn-sm btn-outline text-[#D31027] ml-2">
+                        Login
+                      </button>
                     </NavLink>
                   </p>
                 </div>
