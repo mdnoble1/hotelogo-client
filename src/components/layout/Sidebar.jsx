@@ -26,7 +26,7 @@ const Sidebar = () => {
       <ul className="menu p-4 w-80 min-h-full bg-base-200">
         {/* Sidebar content here */}
         <NavLink
-          to="/rooms"
+          to="/services"
           className={({ isActive }) =>
             isActive
               ? `btn btn-primary btn-sm font-bold text-lg text-[#D31027]`

@@ -4,6 +4,7 @@ import Login from "../page/Login";
 import Register from "../page/Register";
 import Home from "../page/Home";
 import Rooms from "../page/Rooms/Rooms";
+import Details from "../components/Details";
 
 
 const routes = createBrowserRouter([
@@ -16,9 +17,14 @@ const routes = createBrowserRouter([
                 element: <Home/>,  
             },
             {
-                path: 'rooms',
+                path: 'services',
                 element: <Rooms/>,  
-            }
+            },
+            {
+                path: 'services/:id',
+                element: <Details/>,  
+            },
+
         ],
     },
 

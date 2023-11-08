@@ -47,7 +47,7 @@ const Navbar = () => {
           {/* Navbar menu content here */}
 
           <NavLink
-            to="/rooms"
+            to="/services"
             className={({ isActive }) =>
               isActive
                 ? `btn btn-ghost btn-sm font-bold text-lg text-[#D31027]`
