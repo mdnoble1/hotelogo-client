@@ -1,5 +1,5 @@
 import Banner from "./Banner";
-// import Faq from "./Faq";
+import Faq from "./Faq";
 import Gallery from "./Gallery";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -23,8 +23,8 @@ const Home = () => {
         <Banner></Banner>
         <Gallery></Gallery>
         <Testimonial></Testimonial>
-        {/* <Faq></Faq>
-        <Footer></Footer> */}
+        <Faq></Faq>
+        {/* <Footer></Footer> */}
       </div>
     </div>
   );
