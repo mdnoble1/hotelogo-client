@@ -1,8 +1,9 @@
-# React + Vite
+## Live link: https://hotelogo-client.web.app/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### website name: HoteloGo
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-   User can view available rooms.
+-   Authentication with Google, Email, and Password.
+-   Create a Private Route and redirect the user after login.
+-   Used Dot Env to hide Credential data.
+-   Implement react hot toast, sweet alert, react-toastify, Helmet, AOS animation.
