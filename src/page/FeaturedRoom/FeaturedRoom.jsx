@@ -6,7 +6,7 @@ const FeaturedRoom = ({ service }) => {
   return (
     <div>
       <NavLink to={`/services/${_id}`}>
-        <div className="w-11/12 lg:w-[450px] rounded border border-gray-400 mx-auto">
+        <div className="w-11/12 lg:w-[450px] rounded-md border border-gray-400 mx-auto">
           <h2 className="font-semibold text-2xl text-black my-4 mx-6 text-center">
             {roomType}
           </h2>
