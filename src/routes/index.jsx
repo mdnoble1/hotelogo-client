@@ -6,6 +6,7 @@ import Home from "../page/Home";
 import Rooms from "../page/Rooms/Rooms";
 import Details from "../components/Details";
 import ErrorPage from "../page/ErrorPage";
+import PrivateRoute from "./PrivateRoute";
 
 
 const routes = createBrowserRouter([
@@ -24,7 +25,7 @@ const routes = createBrowserRouter([
             },
             {
                 path: 'services/:id',
-                element: <Details/>,  
+                element: <PrivateRoute><Details/></PrivateRoute>,  
             },
 
         ],
