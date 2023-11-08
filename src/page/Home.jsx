@@ -4,7 +4,7 @@ import Gallery from "./Gallery";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-// import Testimonial from "./Testimonial";
+import Testimonial from "./Testimonial";
 // import Footer from "./Footer";
 import { Helmet } from "react-helmet";
 
@@ -22,8 +22,8 @@ const Home = () => {
       <div>
         <Banner></Banner>
         <Gallery></Gallery>
-        {/* <Testimonial></Testimonial>
-        <Faq></Faq>
+        <Testimonial></Testimonial>
+        {/* <Faq></Faq>
         <Footer></Footer> */}
       </div>
     </div>
