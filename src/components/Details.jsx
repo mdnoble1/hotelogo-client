@@ -5,10 +5,12 @@ import { FaRegStar, FaStar } from "react-icons/fa";
 import Rating from "react-rating";
 
 const Details = () => {
+
+
   const axios = UseAxios();
   const { id } = useParams();
 
-  console.log(id);
+  // console.log(id);
 
   const { data: service } = useQuery({
     queryKey: ["service"],
@@ -42,6 +44,12 @@ const Details = () => {
           <h2 className="font-semibold text-2xl text-black mb-4">
             Available : {service?.data?.availability}
           </h2>
+          <h2 className="font-semibold text-2xl text-black mb-4">
+            Special Offers :{" "}
+            <span className="text-[#D31027]">
+              {service?.data?.specialOffers}
+            </span>{" "}
+          </h2>
           <NavLink to={``}>
             <button className="btn btn-outline rounded-lg font-semibold text-xl normal-case text-[#D31027]">
               Book Now
@@ -55,7 +63,10 @@ const Details = () => {
         </p>
       </div>
       <div className="flex justify-between items-center w-11/12 lg:w-[1000px] mx-auto lg:mx-0">
-        <h2 className="font-medium text-xl text-black">Room Size : <span className="text-gray-600">{service?.data?.roomSize}</span></h2>
+        <h2 className="font-medium text-xl text-black">
+          Room Size :{" "}
+          <span className="text-gray-600">{service?.data?.roomSize}</span>
+        </h2>
         <div>
           <Rating
             emptySymbol={

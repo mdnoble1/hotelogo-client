@@ -21,7 +21,7 @@ const Room = ({ service }) => {
           </button>
         </NavLink>
         <p className="font-semibold text-lg text-[#D31027]">
-          {pricePerNight} / Night
+          {pricePerNight}$ / Night
         </p>
       </div>
     </div>
