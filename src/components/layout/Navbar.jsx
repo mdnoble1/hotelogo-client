@@ -50,7 +50,7 @@ const Navbar = () => {
             to="/rooms"
             className={({ isActive }) =>
               isActive
-                ? `btn btn-primary btn-sm font-bold text-lg text-[#D31027]`
+                ? `btn btn-ghost btn-sm font-bold text-lg text-[#D31027]`
                 : `btn btn-ghost btn-sm font-bold text-lg text-black`
             }
           >
