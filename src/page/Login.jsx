@@ -29,13 +29,13 @@ const Login = () => {
     try {
      const  user = await signInUser(email, password);
 
-     console.log(user.user.email)
+    //  console.log(user.user.email)
 
       const res = await axios.post('/auth/access-token' , {
         email : user.user.email
       });
 
-      console.log(res)
+      console.log(res);
 
 
       e.target.reset();

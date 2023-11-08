@@ -1,9 +1,9 @@
 import { NavLink } from "react-router-dom";
 import UseAuth from "../../hooks/UseAuth";
+import logo from "../../assets/images/logo1.png";
+import { CgProfile } from "react-icons/cg";
 
 const Navbar = () => {
-
-
   const { user, logOut } = UseAuth();
 
   const handleLogOut = () => {
@@ -15,7 +15,6 @@ const Navbar = () => {
         console.error(error);
       });
   };
-
 
   return (
     <div className="container mx-auto">
@@ -40,24 +39,19 @@ const Navbar = () => {
           </svg>
         </label>
       </div>
-      <div className="flex-1 px-2 mx-2">
-        <h1 className="text-2xl font-bold">HoteloGo</h1>
+      <div className="flex-1">
+        <img className="w-28 lg:w-48" src={logo} alt="logo" />
       </div>
       <div className="flex-none hidden lg:block">
         <ul className="menu menu-horizontal">
           {/* Navbar menu content here */}
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              isActive ? `btn btn-primary btn-sm` : `btn btn-ghost btn-sm`
-            }
-          >
-            Home
-          </NavLink>
+
           <NavLink
             to="/rooms"
             className={({ isActive }) =>
-              isActive ? `btn btn-primary btn-sm` : `btn btn-ghost btn-sm`
+              isActive
+                ? `btn btn-primary btn-sm font-bold text-lg text-[#D31027]`
+                : `btn btn-ghost btn-sm font-bold text-lg text-black`
             }
           >
             Rooms
@@ -65,68 +59,68 @@ const Navbar = () => {
           <NavLink
             to="/myBookings"
             className={({ isActive }) =>
-              isActive ? `btn btn-primary btn-sm` : `btn btn-ghost btn-sm`
+              isActive
+                ? `btn btn-ghost btn-sm font-bold text-lg text-[#D31027]`
+                : `btn btn-ghost btn-sm font-bold text-lg text-black`
             }
           >
             My Bookings
           </NavLink>
-          <NavLink
-            to="/login"
-            className={({ isActive }) =>
-              isActive ? `btn btn-primary btn-sm` : `btn btn-ghost btn-sm`
-            }
-          >
-            Login
-          </NavLink>
-          <NavLink
-            to="/register"
-            className={({ isActive }) =>
-              isActive ? `btn btn-primary btn-sm` : `btn btn-ghost btn-sm`
-            }
-          >
-            Register
-          </NavLink>
-          <NavLink
-            to="/about"
-            className={({ isActive }) =>
-              isActive ? `btn btn-primary btn-sm` : `btn btn-ghost btn-sm`
-            }
-          >
-            About
-          </NavLink>
-          </ul>
+        </ul>
       </div>
       <div className={`hidden lg:block`}>
-          {user && (
-            <>
-              <div className="flex items-center justify-between gap-4">
+        <div className="dropdown dropdown-end">
+          <label
+            tabIndex={0}
+            className="btn btn-ghost btn-circle avatar text-4xl"
+          >
+            <CgProfile></CgProfile>
+          </label>
+          <div
+            tabIndex={0}
+            className="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-52 mt-4"
+          >
+            {user ? (
+              <>
                 <div>
-                  <label
-                    tabIndex={0}
-                    className="btn btn-ghost btn-circle avatar"
-                  >
-                    <div className="w-10 rounded-full">
-                      <img src={user.photoURL} />
+                  <div>
+                    <div>
+                      <img
+                        className="w-10 rounded-full mx-auto my-4"
+                        src={user.photoURL}
+                      />
                     </div>
-                  </label>
+                  </div>
+                  <div>
+                    <span className="block font-semibold text-center mb-4">
+                      {user.displayName}
+                    </span>
+                  </div>
+                  <div className="text-center">
+                    <button
+                      onClick={handleLogOut}
+                      className="btn btn-sm btn-outline text-[#ea001e]"
+                    >
+                      Logout
+                    </button>
+                  </div>
                 </div>
-                <div>
-                  <span className="block font-semibold text-sm text-center">
-                    {user.displayName}
-                  </span>
+              </>
+            ) : (
+              <>
+                <div className="my-8 text-center">
+                  <p className="font-semibold text-black text-lg">
+                    Please{" "}
+                    <NavLink to="/login" className="text-[#ea001e]">
+                      Login
+                    </NavLink>
+                  </p>
                 </div>
-                <div>
-                  <button
-                    onClick={handleLogOut}
-                    className="btn btn-md btn-outline text-[#ea001e]"
-                  >
-                    Logout
-                  </button>
-                </div>
-              </div>
-            </>
-          )}
+              </>
+            )}
+          </div>
         </div>
+      </div>
     </div>
   );
 };
