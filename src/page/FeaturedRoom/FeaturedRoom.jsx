@@ -2,7 +2,7 @@
 import { NavLink } from "react-router-dom";
 
 const FeaturedRoom = ({ service }) => {
-  const { roomType, roomImage, _id } = service;
+  const { roomType, roomImage, _id } = service | {};
   return (
     <div>
       <NavLink to={`/services/${_id}`}>

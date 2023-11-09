@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import Testimonial from "./Testimonial";
 import Footer from "./Footer";
 import { Helmet } from "react-helmet";
-import FeaturedRooms from "./FeaturedRoom/FeaturedRooms";
+// import FeaturedRooms from "./FeaturedRoom/FeaturedRooms";
 
 const Home = () => {
   useEffect(() => {
@@ -23,7 +23,7 @@ const Home = () => {
       <div>
         <Banner></Banner>
         <Gallery></Gallery>
-        <FeaturedRooms></FeaturedRooms>
+        {/* <FeaturedRooms></FeaturedRooms> */}
         <Testimonial></Testimonial>
         <Faq></Faq>
         <Footer></Footer>

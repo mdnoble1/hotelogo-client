@@ -28,15 +28,17 @@ const Login = () => {
     // log in user from firebase
 
     try {
-      const user = await signInUser(email, password);
+       signInUser(email, password);
+
+      //  const user = await
 
       //  console.log(user.user.email)
 
-      const res = await axios.post("/auth/access-token", {
-        email: user.user.email,
-      });
+      // const res = await axios.post("/auth/access-token", {
+      //   email: user.user.email,
+      // });
 
-      console.log(res);
+      // console.log(res);
 
       e.target.reset();
       navigate("/");
