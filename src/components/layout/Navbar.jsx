@@ -59,7 +59,7 @@ const Navbar = () => {
             Rooms
           </NavLink>
           <NavLink
-            to="/myBookings"
+            to="/bookings"
             className={({ isActive }) =>
               isActive
                 ? `btn btn-ghost btn-sm font-bold text-lg text-[#D31027]`
