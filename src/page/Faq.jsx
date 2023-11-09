@@ -1,8 +1,8 @@
 const Faq = () => {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto w-11/12">
       <div className="my-20 py-5">
-        <h1 className="text-4xl lg:text-5xl text-[#D31027] font-bold text-center mb-10">
+        <h1 className="text-3xl lg:text-5xl text-[#D31027] font-bold text-center mb-10">
           Frequently Asked Questions
         </h1>
 

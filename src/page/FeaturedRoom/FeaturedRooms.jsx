@@ -18,9 +18,10 @@ const FeaturedRooms = () => {
   return (
     <div>
       <div className="mt-12">
-        <h2 className="font-bold text-2xl lg:text-5xl text-[#D31027] text-center">
+        <h2 className="font-bold text-3xl lg:text-5xl text-[#D31027] text-center">
           Featured Rooms
         </h2>
+        <p className='text-xl lg:text-2xl py-4 font-bold text-center'>Indulge in perfection with HoteloGo featured rooms—where luxury meets comfort</p>
       </div>
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 my-12">
         {services.map((service) => (
